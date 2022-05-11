@@ -6,7 +6,10 @@ import (
 )
 
 func TestRepeat(t *testing.T) {
-	got := Repeat("a", 5)
+
+	num := 5
+
+	got := Repeat("a", num)
 	expect := "aaaaa"
 	if got != expect {
 		t.Errorf("got %q but want %q", got, expect)
