@@ -1,9 +1,18 @@
 package sumTails
 
-func SumTails(arr ...[]int) ([]int sum_of_tails)  {
-	sum_of_tail := 0
-	for i := 1; i < len(arr); i++ {
-		sum_of_tail += arr[i]
+import (
+	obj "arrays_and_slices/sum"
+)
+
+func SumTails(numsToSum ...[]int) []int {
+	var sums []int
+	for _, numbers := range numsToSum {
+		if len(numbers) == 0 {
+			sums = append(sums, 0)
+		} else {
+			tail := numbers[1:]
+			sums = append(sums, obj.Sum(tail))
+		}
 	}
-	return
+	return sums
 }
