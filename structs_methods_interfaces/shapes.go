@@ -1,7 +1,6 @@
 package perimeter
 
 import (
-	_ "fmt"
 	"math"
 )
 
@@ -61,6 +60,13 @@ func (c Circle) Area() float64 {
 }
 
 /*func Perimeter(nameOfFigure string, l ...float64) float64 {
+=======
+	"fmt"
+	"math"
+)
+
+func Perimeter(nameOfFigure string, l ...float64) float64 {
+>>>>>>> f59ce94d2e9982d8d48a01c2906e2296dad90863
 	switch nameOfFigure {
 	case "square":
 		return l[0] * 4
@@ -72,9 +78,15 @@ func (c Circle) Area() float64 {
 		fmt.Print("This shape is not available or one hasn't been specified\n")
 		return 0
 	}
+<<<<<<< HEAD
 }*/
 
 /*func Area(nameOfFigure string, l ...float64) float64 {
+=======
+}
+
+func Area(nameOfFigure string, l ...float64) float64 {
+>>>>>>> f59ce94d2e9982d8d48a01c2906e2296dad90863
 	switch nameOfFigure {
 	case "square":
 		return l[0] * l[0]
@@ -86,4 +98,5 @@ func (c Circle) Area() float64 {
 		fmt.Print("This shape is not available or one hasn't been specified\n")
 		return 0
 	}
+<<<<<<< HEAD
 }*/
