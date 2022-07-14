@@ -13,7 +13,8 @@ func mockWebsiteChecker(url string) bool {
 }
 
 func TestCheckWebsites(t *testing.T) {
-	websites := []string{
+
+	urls := []string{
 		"http://cats.de",
 		"http://something.kz",
 		"http://wrongsite.com",
@@ -24,10 +25,9 @@ func TestCheckWebsites(t *testing.T) {
 		"http://something.kz":  true,
 		"http://wrongsite.com": false,
 	}
-
-	got := CheckWebsites(mockWebsiteChecker, websites)
+	got := CheckWebsites(mockWebsiteChecker, urls)
 
 	if !reflect.DeepEqual(want, got) {
-		t.Fatalf("wanted %v, got %v", want, got)
+		t.Errorf("got %v but want %v", got, want)
 	}
 }
