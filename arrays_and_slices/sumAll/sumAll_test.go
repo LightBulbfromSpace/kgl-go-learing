@@ -1,4 +1,4 @@
-package sumAll
+package arrays_and_slices
 
 import (
 	"reflect"

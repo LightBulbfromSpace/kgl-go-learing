@@ -1,7 +1,7 @@
 package hellogo_test
 
 import (
-	"github.com/golang-learning/hellogo"
+	"github.com/LightBulbfromSpace/kld-go-learning/hellogo"
 	"testing"
 
 	"github.com/stretchr/testify/require"

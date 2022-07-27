@@ -1,4 +1,4 @@
-module github.com/golang-learning
+module github.com/LightBulbfromSpace/kld-go-learning
 
 go 1.18
 

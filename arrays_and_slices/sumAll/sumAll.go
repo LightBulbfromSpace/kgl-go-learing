@@ -1,6 +1,6 @@
-package sumAll
+package arrays_and_slices
 
-import s "arrays_and_slices/sum"
+import s "github.com/LightBulbfromSpace/kld-go-learning/arrays_and_slices/sum"
 
 func SumAll(nums ...[]int) (sums []int) {
 	for _, i := range nums {

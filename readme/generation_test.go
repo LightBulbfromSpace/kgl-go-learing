@@ -1,7 +1,7 @@
 package readme_test
 
 import (
-	"github.com/golang-learning/readme"
+	"github.com/LightBulbfromSpace/kld-go-learning/readme"
 	"testing"
 
 	"github.com/stretchr/testify/require"

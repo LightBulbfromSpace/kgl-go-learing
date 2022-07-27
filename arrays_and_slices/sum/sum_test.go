@@ -1,4 +1,4 @@
-package sum
+package arrays_and_slices
 
 import "testing"
 

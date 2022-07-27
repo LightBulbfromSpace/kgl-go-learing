@@ -1,8 +1,6 @@
-package sumTails
+package arrays_and_slices
 
-import (
-	obj "arrays_and_slices/sum"
-)
+import s "github.com/LightBulbfromSpace/kld-go-learning/arrays_and_slices/sum"
 
 func SumTails(numsToSum ...[]int) []int {
 	var sums []int
@@ -11,7 +9,7 @@ func SumTails(numsToSum ...[]int) []int {
 			sums = append(sums, 0)
 		} else {
 			tail := numbers[1:]
-			sums = append(sums, obj.Sum(tail))
+			sums = append(sums, s.Sum(tail))
 		}
 	}
 	return sums
