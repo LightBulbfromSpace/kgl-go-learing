@@ -4,7 +4,7 @@
 
 # About me
 
-Short bio and motivation in learning golang.
+Student of mathematical and information direction.
 
 # Learned lessons
 {{range .}}
