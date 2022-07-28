@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/LightBulbfromSpace/kld-go-learning/math"
+	"github.com/LightBulbfromSpace/kld-go-learning/math/v1"
 	"io"
 	"os"
 	"time"

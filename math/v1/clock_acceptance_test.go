@@ -1,7 +1,7 @@
 package clock_test
 
 import (
-	"github.com/LightBulbfromSpace/kld-go-learning/math"
+	"github.com/LightBulbfromSpace/kld-go-learning/math/v1"
 	"testing"
 	"time"
 )

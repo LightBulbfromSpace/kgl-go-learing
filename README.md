@@ -205,7 +205,7 @@ func (d Dictionary) Update(word, newDefinition string) error
 type DictionaryErr string
 
 func (e DictionaryErr) Error() string
-### github.com/LightBulbfromSpace/kld-go-learning/math - 100.0%
+### github.com/LightBulbfromSpace/kld-go-learning/math/v1 - 100.0%
 TYPES
 
 type Point struct {
@@ -214,6 +214,53 @@ type Point struct {
 }
 
 func SecondHand(t time.Time) Point
+### github.com/LightBulbfromSpace/kld-go-learning/math/v2 - 100.0%
+
+<details>
+  <summary><code>func SVGWriter(w io.Writer, t time.Time)</code></summary>
+
+</details>
+
+<details>
+  <summary><code>func SecondHand(w io.Writer, t time.Time)</code></summary>
+
+    TYPES
+    type Point struct {
+    X float64
+    Y float64
+    }
+</details>
+
+### github.com/LightBulbfromSpace/kld-go-learning/math/v3 - 100.0%
+
+<details>
+  <summary><code>func SVGWriter(w io.Writer, t time.Time)</code></summary>
+
+</details>
+
+<details>
+  <summary><code>func SecondHand(w io.Writer, t time.Time)</code></summary>
+
+    TYPES
+    type Point struct {
+    X float64
+    Y float64
+    }
+</details>
+
+### github.com/LightBulbfromSpace/kld-go-learning/math/v4 - 100.0%
+
+<details>
+  <summary><code>func SVGWriter(w io.Writer, t time.Time)</code></summary>
+
+    TYPES
+    type Point struct {
+    X float64
+    Y float64
+    }
+    A Point represents a two dimensional Cartesian coordinate.
+</details>
+
 ### github.com/LightBulbfromSpace/kld-go-learning/mocking/configurable_sleeper - 81.8%
 
 <details>
@@ -304,30 +351,6 @@ func (w *Wallet) Balance() Ethereum
 func (w *Wallet) Deposit(sum Ethereum) error
 
 func (w *Wallet) Withdraw(sum Ethereum) error
-### github.com/LightBulbfromSpace/kld-go-learning/readme - 94.3%
-
-<details>
-  <summary><code>func MakeContent(packages []Package) string</code></summary>
-
-    TYPES
-    type Function struct {
-    Interface string
-    DocLines  []string
-    }
-    type Package struct {
-    Package      string
-    TestCoverage string     // TestCoverage from go test -cover
-    Description  string     // Description from go doc comment above package
-    Functions    []Function // Functions and their docs above
-    }
-    Package represents exercises directory.
-</details>
-
-<details>
-  <summary><code>func GetPackages(commandRunner func(cmd string, args ...string) string) (result []Package)</code></summary>
-
-</details>
-
 ### github.com/LightBulbfromSpace/kld-go-learning/reflection/v1 - 100.0%
 
 ### github.com/LightBulbfromSpace/kld-go-learning/reflection/v2 - 100.0%
