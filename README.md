@@ -1,6 +1,6 @@
 # golang-learning
 
-Exercises made during the course [Learn go with tests](https://quii.gitbook.io/learn-go-with-tests/). Names of folders match the chapters of course. Inside folders are contained version of code reflecting progress during each lesson.
+Exercises made during the course [Learn go with tests](https://quii.gitbook.io/learn-go-with-tests/).  Names of folders match the chapters of course. Inside folders are contained version of code reflecting progress during each lesson.
 
 Упражнения, сделанные во время прохождения [Learn go with tests](https://quii.gitbook.io/learn-go-with-tests/). Названия папок соответствуют разделам курса. Внутри папок содержатся версии кода, отражающие прогресс в течение урока.
 
@@ -17,6 +17,7 @@ Student of mathematical and information direction. Interested in backend develop
 <details>
   <summary><code>func Sum(numbers []int) int</code></summary>
 
+    Sum calculates the total from a slice of numbers.
 </details>
 
 ### github.com/LightBulbfromSpace/kld-go-learning/arrays_and_slices/sumAll - 100.0%
@@ -24,6 +25,7 @@ Student of mathematical and information direction. Interested in backend develop
 <details>
   <summary><code>func SumAll(nums ...[]int) (sums []int)</code></summary>
 
+    SumAll calculates the sums in all given slices.
 </details>
 
 ### github.com/LightBulbfromSpace/kld-go-learning/arrays_and_slices/sumTails - 100.0%
@@ -31,6 +33,8 @@ Student of mathematical and information direction. Interested in backend develop
 <details>
   <summary><code>func SumTails(numsToSum ...[]int) []int</code></summary>
 
+    SumTails calculates the sums of all but the first number given a collection
+    of slices.
 </details>
 
 ### github.com/LightBulbfromSpace/kld-go-learning/concurrency/faster_version_v2 - 100.0%
@@ -92,6 +96,53 @@ Student of mathematical and information direction. Interested in backend develop
 <details>
   <summary><code>func Greet(writer io.Writer, name string)</code></summary>
 
+</details>
+
+### github.com/LightBulbfromSpace/kld-go-learning/generics - 71.4%
+
+<details>
+  <summary><code>func AssertEqual[T comparable](t *testing.T, got, want T)</code></summary>
+
+</details>
+
+<details>
+  <summary><code>func AssertFalse(t *testing.T, got bool)</code></summary>
+
+</details>
+
+<details>
+  <summary><code>func AssertNotEqual[T comparable](t *testing.T, got, want T)</code></summary>
+
+</details>
+
+<details>
+  <summary><code>func AssertTrue(t *testing.T, got bool)</code></summary>
+
+    TYPES
+    type Stack[T any] struct {
+    // Has unexported fields.
+    }
+</details>
+
+<details>
+  <summary><code>func (s *Stack[T]) IsEmpty() bool</code></summary>
+
+    IsEmpty return true if stack is empty
+</details>
+
+<details>
+  <summary><code>func (s *Stack[T]) Pop() (T, bool)</code></summary>
+
+    Pop removes the last value in stack, returns as the first parameter value of
+    removed item and false as the second parameter if stack is empty
+</details>
+
+<details>
+  <summary><code>func (s *Stack[T]) Push(value T)</code></summary>
+
+    Push appends value to the end
+    type StackOfInts = Stack[int]
+    type StackOfStrings = Stack[string]
 </details>
 
 ### github.com/LightBulbfromSpace/kld-go-learning/hello - 92.9%
@@ -355,11 +406,155 @@ func (w *Wallet) Balance() Ethereum
 func (w *Wallet) Deposit(sum Ethereum) error
 
 func (w *Wallet) Withdraw(sum Ethereum) error
+### github.com/LightBulbfromSpace/kld-go-learning/reading_files/v1 - 43.8%
+TYPES
+
+type Post struct {
+	Title string
+}
+
+func NewPostsFromFS(fileSystem fs.FS) ([]Post, error)
+### github.com/LightBulbfromSpace/kld-go-learning/reading_files/v2 - 84.2%
+TYPES
+
+type Post struct {
+	Title string
+}
+
+func NewPostsFromFS(fileSystem fs.FS) ([]Post, error)
+### github.com/LightBulbfromSpace/kld-go-learning/reading_files/v3 - 88.9%
+TYPES
+
+type Post struct {
+	Title       string
+	Description string
+	Tags        []string
+	Body        string
+}
+
+func NewPost(postFile io.Reader) (Post, error)
+    NewPost parses file contents code
+
+func NewPostsFromFS(fileSystem fs.FS) ([]Post, error)
+### github.com/LightBulbfromSpace/kld-go-learning/reading_files/v4 - 94.6%
+VARIABLES
+
+var MetaSeparators = []Separator{
+	titleSeparator,
+	descriptionSeparator,
+	tagsSeparator,
+}
+
+TYPES
+
+type Post struct {
+	Title       string
+	Description string
+	Tags        []string
+	Body        string
+}
+
+func NewPost(postFile io.Reader) (Post, error)
+    NewPost parses file contents code
+
+func NewPostsFromFS(fileSystem fs.FS) ([]Post, error)
+
+type Separator string
 ### github.com/LightBulbfromSpace/kld-go-learning/reflection/v1 - 100.0%
 
 ### github.com/LightBulbfromSpace/kld-go-learning/reflection/v2 - 100.0%
 
 ### github.com/LightBulbfromSpace/kld-go-learning/reflection/v3 - 100.0%
+
+### github.com/LightBulbfromSpace/kld-go-learning/revisiting_arrays_and_slices_with_generics - 74.4%
+
+<details>
+  <summary><code>func AssertEqual[T comparable](t *testing.T, got, want T)</code></summary>
+
+</details>
+
+<details>
+  <summary><code>func AssertFalse(t *testing.T, got bool)</code></summary>
+
+</details>
+
+<details>
+  <summary><code>func AssertNotEqual[T comparable](t *testing.T, got, want T)</code></summary>
+
+</details>
+
+<details>
+  <summary><code>func AssertTrue(t *testing.T, got bool)</code></summary>
+
+</details>
+
+<details>
+  <summary><code>func BalanceFor(transactions []Transaction, name string) float64</code></summary>
+
+</details>
+
+<details>
+  <summary><code>func Find[A any](collection []A, parameterFunc func(A) bool) (value A, found bool)</code></summary>
+
+</details>
+
+<details>
+  <summary><code>func Reduce[A, B any](collection []A, accumulator func(B, A) B, initialValue B) B</code></summary>
+
+</details>
+
+<details>
+  <summary><code>func Sum(numbers []int) int</code></summary>
+
+    Sum calculates the total from a slice of numbers.
+</details>
+
+<details>
+  <summary><code>func SumAll(nums ...[]int) []int</code></summary>
+
+    SumAll calculates the sums in all given slices.
+</details>
+
+<details>
+  <summary><code>func SumAllTails(numsToSum ...[]int) []int</code></summary>
+
+    SumAllTails calculates the sums of all but the first number given a
+    collection of slices.
+    TYPES
+    type Account struct {
+    Name    string
+    Balance float64
+    }
+</details>
+
+<details>
+  <summary><code>func NewBalanceFor(account Account, transactions []Transaction) Account</code></summary>
+
+    type Color struct {
+    R, G, B int64
+    A       float32
+    }
+</details>
+
+<details>
+  <summary><code>func ColorMixer(colors ...Color) (Color, error)</code></summary>
+
+</details>
+
+<details>
+  <summary><code>func NewColor(RGB string, A float32) (Color, error)</code></summary>
+
+    type Transaction struct {
+    From   string
+    To     string
+    Amount float64
+    }
+</details>
+
+<details>
+  <summary><code>func NewTransaction(from, to Account, amount float64) Transaction</code></summary>
+
+</details>
 
 ### github.com/LightBulbfromSpace/kld-go-learning/select/concurrency_check - 90.0%
 
