@@ -24,7 +24,7 @@ func GetPackages(commandRunner func(cmd string, args ...string) string) (result 
 			log.Fatalln("test parsing:", err)
 		}
 
-		path := strings.TrimPrefix(row.Package, "github.com/golang-learning/")
+		path := strings.TrimPrefix(row.Package, "github.com/LightBulbfromSpace/kld-go-learning/")
 
 		// skip generator
 		if strings.HasPrefix(path, "readme") {
