@@ -28,14 +28,14 @@ func TestGETPlayers(t *testing.T) {
 		},
 	}
 
-	server := &PlayerServer{store: &stubStore}
+	server := &PlayerServer{store: &stubStore, router: http.NewServeMux()}
 	server.configureRouter()
 
 	t.Run("returns Steve's score", func(t *testing.T) {
 		request := newGetScoreRequest("Steve")
 		responce := httptest.NewRecorder()
 
-		server.ServeHTTP(responce, request)
+		server.router.ServeHTTP(responce, request)
 
 		AssertStatus(t, responce.Code, http.StatusOK)
 		AssertResponseBody(t, responce.Body.String(), "20")
@@ -44,7 +44,7 @@ func TestGETPlayers(t *testing.T) {
 		request := newGetScoreRequest("David")
 		responce := httptest.NewRecorder()
 
-		server.ServeHTTP(responce, request)
+		server.router.ServeHTTP(responce, request)
 
 		AssertStatus(t, responce.Code, http.StatusOK)
 		AssertResponseBody(t, responce.Body.String(), "10")
@@ -54,7 +54,7 @@ func TestGETPlayers(t *testing.T) {
 		request := newGetScoreRequest("Fred")
 		responce := httptest.NewRecorder()
 
-		server.ServeHTTP(responce, request)
+		server.router.ServeHTTP(responce, request)
 		AssertStatus(t, responce.Code, http.StatusNotFound)
 	})
 }
@@ -64,7 +64,7 @@ func TestStoreWins(t *testing.T) {
 		scores:   map[string]int{},
 		winCalls: nil,
 	}
-	server := PlayerServer{store: &stubStore}
+	server := PlayerServer{store: &stubStore, router: http.NewServeMux()}
 	server.configureRouter()
 
 	t.Run("it returns accepted on POST", func(t *testing.T) {
@@ -72,7 +72,7 @@ func TestStoreWins(t *testing.T) {
 		request := newPostWinRequest(player)
 		responce := httptest.NewRecorder()
 
-		server.ServeHTTP(responce, request)
+		server.router.ServeHTTP(responce, request)
 		AssertStatus(t, responce.Code, http.StatusAccepted)
 
 		if len(stubStore.winCalls) != 1 {
@@ -87,14 +87,14 @@ func TestStoreWins(t *testing.T) {
 
 func TestLeague(t *testing.T) {
 	store := &StubPlayerStore{}
-	server := &PlayerServer{store: store}
+	server := &PlayerServer{store: store, router: http.NewServeMux()}
 	server.configureRouter()
 
 	t.Run("it returns 200 on /league", func(t *testing.T) {
 		request, _ := http.NewRequest(http.MethodGet, "/league", nil)
 		responce := httptest.NewRecorder()
 
-		server.ServeHTTP(responce, request)
+		server.router.ServeHTTP(responce, request)
 
 		AssertStatus(t, responce.Code, http.StatusOK)
 	})

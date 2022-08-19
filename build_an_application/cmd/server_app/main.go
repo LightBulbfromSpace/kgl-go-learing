@@ -5,7 +5,6 @@ import (
 	"github.com/BurntSushi/toml"
 	server "github.com/LightBulbfromSpace/build_an_application/internal/app/server_app"
 	"log"
-	"net/http"
 )
 
 var configPath string
@@ -22,11 +21,11 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	server := server.NewServer(config)
 
+	server := server.NewServer(config)
 	if err := server.Start(); err != nil {
 		log.Fatal(err)
 	}
-
-	log.Fatal(http.ListenAndServe(":8080", server))
+	//http.ListenAndServe(p.config.BindAddr, p.router)
+	//http.ListenAndServe(":8080", server)
 }
