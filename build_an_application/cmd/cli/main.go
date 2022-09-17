@@ -1,15 +1,15 @@
 package main
 
 import (
-	"github.com/LightBulbfromSpace/build_an_application"
+	"fmt"
+	poker "github.com/LightBulbfromSpace/build_an_application"
 	"log"
-	"net/http"
+	"os"
 )
 
 const dbFileName = "game.db.json"
 
 func main() {
-
 	store, closeDB, err := poker.FileSystemPlayerStoreFromFile(dbFileName)
 
 	if err != nil {
@@ -18,12 +18,10 @@ func main() {
 
 	defer closeDB()
 
+	fmt.Println("Let's play poker")
+	fmt.Println(`Type "{Name} wins" to record a win`)
+
 	game := poker.NewTexasHoldem(store, poker.BlindAlerterFunc(poker.Alerter))
-	server, err := poker.NewServer(store, game)
-	if err != nil {
-		log.Fatal(err)
-	}
-	if err := http.ListenAndServe(":5000", server); err != nil {
-		log.Fatalf("could not listen on port 5000 %v", err)
-	}
+	cli := poker.NewCLI(os.Stdin, os.Stdout, game)
+	cli.PlayPoker()
 }

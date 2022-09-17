@@ -433,7 +433,7 @@ type Post struct {
 }
 
 func NewPost(postFile io.Reader) (Post, error)
-    NewPost parses file contents code
+    NewPost parses File contents code
 
 func NewPostsFromFS(fileSystem fs.FS) ([]Post, error)
 ### reading_files/v4 - 94.6%
@@ -455,7 +455,7 @@ type Post struct {
 }
 
 func NewPost(postFile io.Reader) (Post, error)
-    NewPost parses file contents code
+    NewPost parses File contents code
 
 func NewPostsFromFS(fileSystem fs.FS) ([]Post, error)
 
